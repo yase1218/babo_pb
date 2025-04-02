@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "../pb_code;pb_code";
+
+import "msg_id.proto";
+
+// 通用消息体 前后端通信的消息体格式 二进制流先使用该格式反序列化 确定id 然后根据id进行对body使用具体的proto进行反序列化
+message Proto {
+    MsgId id    = 1; // 消息id
+	bytes body  = 2; // 消息体的proto的bytes数组
+}

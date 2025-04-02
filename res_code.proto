@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "../pb_code;pb_code";
+
+// 通用返回码 客户端用作逻辑判断 统一错误提示
+enum ResCode {
+    Success             = 0; // 成功
+    Fail                = 1; // 失败
+}

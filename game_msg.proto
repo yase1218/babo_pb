@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package pb;
+option go_package = "../pb_code;pb_code";
+
+import "res_code.proto";
+
+////////////////////////////////////////////////////////////////
+// 后缀说明
+// *Req: 客户端请求
+// *Rsp: 服务器响应
+// *Ntf: 服务器通知
+
+// 心跳请求
+message HeartBeatReq {
+}
+
+// 心跳响应
+message HeartBeatRsp {
+    int64 time = 1; // 服务器当前时间戳
+}
+
+// 登录请求
+message LoginReq {
+    string account      = 1; // 账号
+    //string password   = 2; // 密码
+}
+
+// 登录响应
+message LoginRsp {
+    ResCode code        = 1; // 返回码
+    int64 uid           = 2; // 角色唯一id
+
+    // add user data here
+}
