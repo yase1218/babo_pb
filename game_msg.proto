@@ -4,6 +4,7 @@ package pb;
 option go_package = "../pb_code;pb_code";
 
 import "res_code.proto";
+import "common_def.proto";
 
 ////////////////////////////////////////////////////////////////
 // 后缀说明
@@ -32,4 +33,36 @@ message LoginRsp {
     int64 uid           = 2; // 角色唯一id
 
     // add user data here
+}
+
+// 匹配战斗请求
+message MatchReq {
+}
+// 匹配战斗返回 成功表示进入匹配 开始等待匹配结果
+message MatchRsp {
+    ResCode code        = 1; // 返回码
+}
+
+// 匹配结果通知
+message MatchResultNtf {
+    MatchTarget target   = 1; // 匹配到的对方玩家信息
+    int64 roomId         = 2; // 房间id
+}
+
+// 进入房间请求
+message EnterRoomReq {
+    int64 roomId         = 1; // 房间id
+}
+// 进入房间响应
+message EnterRoomRsp {
+    ResCode code        = 1; // 返回码
+
+    // 如果成功 且对方玩家已经进入房间，则返回对方玩家的信息;否则为空
+    // 该字段在客户端使用时需要判断是否为空
+    RoomTarget target   = 2; // 对方玩家信息
+}
+
+// 用户进入房间通知(只有先进入的玩家会收到该通知)
+message UserEnterRoomNtf {
+    RoomTarget target   = 1; // 对方玩家信息
 }

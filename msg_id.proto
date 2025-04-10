@@ -7,4 +7,8 @@ option go_package = "../pb_code;pb_code";
 enum MsgId {
     HeartBeat       = 0; // 心跳
     Login           = 1; // 登录消息
+    Match           = 2; // 匹配消息
+    MatchResult     = 3; // 匹配结果消息
+    EnterRoom       = 4; // 进入房间消息
+    UserEnterRoom   = 5; // 用户进入房间消息
 }

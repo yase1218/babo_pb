@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package pb;
+option go_package = "../pb_code;pb_code";
+
+// 匹配到的对方玩家信息
+message MatchTarget {
+	int64 uid = 1; // 玩家id
+
+	// todo 添加字段 例如：头像，名字，外观等
+}
+
+// 战斗房间内的对方玩家信息
+message RoomTarget {
+	int64 uid = 1; // 玩家id
+
+	// todo 添加字段 例如：头像，名字，外观等
+}
