@@ -11,4 +11,7 @@ enum MsgId {
     MatchResult     = 3; // 匹配结果消息
     EnterRoom       = 4; // 进入房间消息
     UserEnterRoom   = 5; // 用户进入房间消息
+    ThrowCard       = 6; // 出牌消息
+    UserThrowCard   = 7; // 用户出牌消息
+    RoundResult     = 8; // 回合结果消息
 }

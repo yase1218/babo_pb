@@ -66,3 +66,25 @@ message EnterRoomRsp {
 message UserEnterRoomNtf {
     RoomTarget target   = 1; // 对方玩家信息
 }
+
+// 出牌请求
+message ThrowCardReq {
+   int32 cardId = 1; // 出手的卡牌id
+}
+
+// 出牌响应
+message ThrowCardRsp {
+    ResCode code        = 1; // 返回码
+    int32 cardId        = 2; // 出手的卡牌id
+}
+
+// 出牌通知
+message UserThrowCardNtf {
+    int64 uid           = 1; // 出牌的玩家id
+    int32 cardId        = 2; // 出手的卡牌id
+}
+
+// 回合结果通知
+message RoundResultNtf {
+    RoundResultData result = 1;
+}

@@ -16,3 +16,8 @@ message RoomTarget {
 
 	// todo 添加字段 例如：头像，名字，外观等
 }
+
+// 回合结果
+message RoundResultData {
+	// 回合结果 暂无字段 需要根据所有卡牌结算结果定义结构
+}
